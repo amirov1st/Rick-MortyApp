@@ -28,25 +28,26 @@ final class CharactersListViewController: UITableViewController {
             self?.tableView.reloadData()
         }
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         characters.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? CharacterTableViewCell else {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath)
+        guard let cell = cell as? CharacterTableViewCell else {
             return UITableViewCell()
         }
         
         cell.configure(with: characters[indexPath.row])
-
+        
         return cell
     }
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         let character = characters[indexPath.row]
