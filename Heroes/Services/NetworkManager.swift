@@ -20,12 +20,15 @@ enum Link: String {
 class NetworkManager {
     static let shared = NetworkManager()
     
-    func fetchImage(url: String, completion: @escaping (Data) -> Void) {
-        guard let url = URL(string: url) else { return }
+    func fetchImage(url: String, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+        guard let url = URL(string: url) else {
+            completion(.failure(.invalidURL))
+            return
+        }
         DispatchQueue.global().async {
             guard let imageData = try? Data(contentsOf: url) else { return }
             DispatchQueue.main.async {
-                completion(imageData)
+                completion(.success(imageData))
             }
         }
     }
