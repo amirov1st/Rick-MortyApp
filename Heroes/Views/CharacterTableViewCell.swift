@@ -25,8 +25,13 @@ class CharacterTableViewCell: UITableViewCell {
         speciesLabel.text = character.species
         
 //        characterImageView.kf.setImage(with: character.image)
-        networkManager.fetchImage(url: character.image) { [weak self] imageData in
-            self?.characterImageView.image = UIImage(data: imageData)
+        networkManager.fetchImage(url: character.image) { [weak self] result in
+            switch result {
+            case .success(let imageData):
+                self?.characterImageView.image = UIImage(data: imageData)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }

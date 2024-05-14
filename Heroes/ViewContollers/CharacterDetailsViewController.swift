@@ -29,8 +29,13 @@ final class CharacterDetailsViewController: UIViewController {
         Gender: \(character.gender)
         This character is from \(character.origin.name) planet. At the moment lives at \(character.location.name).
         """
-        networkManager.fetchImage(url: character.image) { [weak self] imageData in
-            self?.characterImage.image = UIImage(data: imageData)
+        networkManager.fetchImage(url: character.image) { [weak self] result in
+            switch result {
+            case .success(let imageData):
+                self?.characterImage.image = UIImage(data: imageData)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }
