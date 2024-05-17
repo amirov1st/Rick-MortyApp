@@ -15,14 +15,10 @@ struct Character: Decodable {
     let species: String
     let gender: String
     let origin: Origin
-    let location: Location
+    let location: Origin
     let image: String
 }
 
 struct Origin: Decodable {
-    let name: String
-}
-
-struct Location: Decodable {
     let name: String
 }
