@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum NetworkError: Error {
     case invalidURL
@@ -33,25 +34,18 @@ class NetworkManager {
         }
     }
     
-    func fetchCharacters(url: String, completion: @escaping (Result<[Character], NetworkError>) -> Void) {
-        guard let url = URL(string: url) else { completion(.failure(.invalidURL))
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data else { completion(.failure(.noData))
-                return }
-            
-            do {
-                let decoder = JSONDecoder()
-                let charactersQuery = try decoder.decode(CharactersQuery.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(charactersQuery.results))
+    func fetchCharacters(from url: URL, completion: @escaping (Result<[Character], AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let jsonValue):                    
+                    let characters =  Character.getCharacters(from: jsonValue)
+                    completion(.success(characters))
+                case .failure(let error):
+                    completion(.failure(error))
                 }
-            } catch {
-                completion(.failure(.decodingError))
             }
-        }.resume()
     }
     
     private init() {}
