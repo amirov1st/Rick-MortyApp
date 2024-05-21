@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A646146F2BF752EB00279ABA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A646146E2BF752EB00279ABA /* Alamofire */; };
-		A64614712BF752EB00279ABA /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = A64614702BF752EB00279ABA /* AlamofireDynamic */; };
+		A684709C2BFC82060008B2F2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A684709B2BFC82060008B2F2 /* Alamofire */; };
+		A684709E2BFC82060008B2F2 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = A684709D2BFC82060008B2F2 /* AlamofireDynamic */; };
+		A684709F2BFC82110008B2F2 /* AlamofireDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = A684709D2BFC82060008B2F2 /* AlamofireDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A6A149D62BF25D3000387EC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A149D52BF25D3000387EC4 /* AppDelegate.swift */; };
 		A6A149D82BF25D3000387EC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A149D72BF25D3000387EC4 /* SceneDelegate.swift */; };
 		A6A149DD2BF25D3000387EC4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A6A149DC2BF25D3000387EC4 /* Base */; };
@@ -20,6 +21,20 @@
 		A6A149F82BF2601000387EC4 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A149F72BF2601000387EC4 /* Character.swift */; };
 		A6A149FA2BF2602000387EC4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A149F92BF2602000387EC4 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A68470A02BFC82120008B2F2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A684709F2BFC82110008B2F2 /* AlamofireDynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A6A149D22BF25D3000387EC4 /* Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,19 +56,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A646146F2BF752EB00279ABA /* Alamofire in Frameworks */,
-				A64614712BF752EB00279ABA /* AlamofireDynamic in Frameworks */,
+				A684709C2BFC82060008B2F2 /* Alamofire in Frameworks */,
+				A684709E2BFC82060008B2F2 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A684709A2BFC81B60008B2F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A6A149C92BF25D3000387EC4 = {
 			isa = PBXGroup;
 			children = (
 				A6A149D42BF25D3000387EC4 /* Heroes */,
 				A6A149D32BF25D3000387EC4 /* Products */,
+				A684709A2BFC81B60008B2F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +164,7 @@
 				A6A149CE2BF25D3000387EC4 /* Sources */,
 				A6A149CF2BF25D3000387EC4 /* Frameworks */,
 				A6A149D02BF25D3000387EC4 /* Resources */,
+				A68470A02BFC82120008B2F2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,8 +172,8 @@
 			);
 			name = Heroes;
 			packageProductDependencies = (
-				A646146E2BF752EB00279ABA /* Alamofire */,
-				A64614702BF752EB00279ABA /* AlamofireDynamic */,
+				A684709B2BFC82060008B2F2 /* Alamofire */,
+				A684709D2BFC82060008B2F2 /* AlamofireDynamic */,
 			);
 			productName = Heroes;
 			productReference = A6A149D22BF25D3000387EC4 /* Heroes.app */;
@@ -468,12 +492,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A646146E2BF752EB00279ABA /* Alamofire */ = {
+		A684709B2BFC82060008B2F2 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A646146D2BF752EB00279ABA /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		A64614702BF752EB00279ABA /* AlamofireDynamic */ = {
+		A684709D2BFC82060008B2F2 /* AlamofireDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A646146D2BF752EB00279ABA /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;

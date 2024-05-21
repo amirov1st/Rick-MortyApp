@@ -18,15 +18,15 @@ final class CharactersListViewController: UITableViewController {
     }
     
     private func fetchCharacters() {
-        networkManager.fetchCharacters(from: Link.url) { [unowned self] result in
+        networkManager.fetchCharacters(from: Link.urlApi.url) { [unowned self] result in
             switch result {
             case .success(let characters):
                 self.characters = characters
+                self.tableView.reloadData()
             case .failure(let error):
                 printContent(error)
             }
         }
-        self.tableView.reloadData()
     }
     
     
