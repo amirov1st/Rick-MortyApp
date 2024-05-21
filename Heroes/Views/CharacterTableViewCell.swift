@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class CharacterTableViewCell: UITableViewCell {
     
@@ -24,7 +23,6 @@ class CharacterTableViewCell: UITableViewCell {
         nameLabel.text = character.name
         speciesLabel.text = character.species
         
-//        characterImageView.kf.setImage(with: character.image)
         networkManager.fetchImage(url: character.image) { [weak self] result in
             switch result {
             case .success(let imageData):

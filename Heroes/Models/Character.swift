@@ -17,6 +17,16 @@ struct Character: Decodable {
     let origin: Origin
     let location: Origin
     let image: String
+    
+    var description: String {
+        """
+        ID: \(id)
+        Name: \(name)
+        Species: \(species)
+        Gender: \(gender)
+        This character is from \(origin.name) planet. At the moment lives at \(location.name).
+        """
+    }
 }
 
 struct Origin: Decodable {

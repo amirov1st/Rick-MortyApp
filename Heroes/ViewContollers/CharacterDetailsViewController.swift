@@ -22,13 +22,7 @@ final class CharacterDetailsViewController: UIViewController {
     }
  
     private func composeCharacter(_ character: Character) {
-        descriptionLabel.text = """
-        ID: \(character.id)
-        Name: \(character.name)
-        Species: \(character.species)
-        Gender: \(character.gender)
-        This character is from \(character.origin.name) planet. At the moment lives at \(character.location.name).
-        """
+        descriptionLabel.text = character.description
         networkManager.fetchImage(url: character.image) { [weak self] result in
             switch result {
             case .success(let imageData):

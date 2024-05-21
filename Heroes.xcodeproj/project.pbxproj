@@ -17,7 +17,6 @@
 		A6A149F62BF25FC600387EC4 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A149F52BF25FC600387EC4 /* CharacterTableViewCell.swift */; };
 		A6A149F82BF2601000387EC4 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A149F72BF2601000387EC4 /* Character.swift */; };
 		A6A149FA2BF2602000387EC4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A149F92BF2602000387EC4 /* NetworkManager.swift */; };
-		A6E53F822BF2987E004A3B55 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A6E53F812BF2987E004A3B55 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +39,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6E53F822BF2987E004A3B55 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +144,6 @@
 			);
 			name = Heroes;
 			packageProductDependencies = (
-				A6E53F812BF2987E004A3B55 /* Kingfisher */,
 			);
 			productName = Heroes;
 			productReference = A6A149D22BF25D3000387EC4 /* Heroes.app */;
@@ -454,14 +451,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A6E53F812BF2987E004A3B55 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A6E53F802BF2987E004A3B55 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A6A149CA2BF25D3000387EC4 /* Project object */;
 }
